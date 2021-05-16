@@ -1,0 +1,66 @@
+slug: first-lab
+id: khpnelwh6atg
+type: track
+title: Nginx
+teaser: How to provision a container running nginx.
+description: |-
+  Nginx is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004.
+
+  .
+icon: https://www.nginx.com/wp-content/uploads/2020/05/NGINX-product-icon.svg
+tags: []
+owner: nuaware
+developers:
+- khalid@nuaware.com
+private: true
+published: false
+challenges:
+- slug: first-challenge
+  id: elkkczyykpz6
+  type: challenge
+  title: First challenge
+  teaser: A simple HTTP Server.
+  assignment: |-
+    In this challenge we will pull a NGINX Official docker image from Docker
+    Hub.
+
+    Run the following command to get the Official Nginx Docker image:
+
+    ```
+    sudo docker pull nginx
+    ```
+
+    This downloads all the necessary parts for the container.
+
+    Docker maintains a site called **DockerHub**, a public repository of Docker files (including both official-made and user-made images). The image we downloaded is the official Nginx one, which saves us from having to build our own.
+
+    To start our newly pulled Nginx Docker container run the command:
+    ```
+    sudo docker run --name docker-nginx -p 8080:80 -d nginx
+    ```
+
+    * **`run`** is the command to create a new container.
+    * The **`--name`** flag is how we specify the name of the container.
+    * **`-p`** specifies the port we are exposing in the format of
+    **`local-machine-port:internal-container-port`***. In this case we are mapping Port 80 in the container to Port 8080 on the server
+
+    * **`nginx`** is the name of the image on dockerhub (we previously downloaded this before with the initial pull command)
+
+    ***Now we can either open up you open the `Web` tab to see our default Nginx .html web page or copy the command ``` curl  http://localhost:8080/ ``` to see the NGINX default wep page content in the terminal***
+
+    :clap: Success! This is great! Continue on to the next challenge where you will serve our own custom html file and not the default NGINX welcome page.
+  notes:
+  - type: text
+    contents: Replace this text with your own text
+  tabs:
+  - title: node
+    type: terminal
+    hostname: node
+  - title: web
+    type: service
+    hostname: node
+    port: 8080
+    new_window: true
+  difficulty: basic
+  timelimit: 600
+checksum: "931759315027593400"
