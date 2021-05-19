@@ -27,7 +27,7 @@ challenges:
     Run the following command to get the Official Nginx Docker image:
 
     ```
-    sudo docker pull nginx
+    docker pull nginx
     ```
 
     This downloads all the necessary parts for the container.
@@ -36,7 +36,7 @@ challenges:
 
     To start our newly pulled Nginx Docker container run the command:
     ```
-    sudo docker run --name docker-nginx -p 8080:80 -d nginx
+    docker run --name docker-nginx -p 8080:80 -d nginx
     ```
 
     * **`run`** is the command to create a new container.
